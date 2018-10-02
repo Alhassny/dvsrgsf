@@ -13,7 +13,7 @@ client.on('message', message => {
     
       let args = message.content.split(" ").slice(1);
     
-      if (command == ">kick") {
+      if (command == "kick") {
                    if(!message.channel.guild) return;
              
       if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("You Don't Have KICK_MEMBERS Permission").then(msg => msg.delete(5000));
@@ -44,7 +44,7 @@ client.on('message', message => {
       
         let args = message.content.split(" ").slice(1);
       
-        if (command == ">ban") {
+        if (command == "ban") {
                      if(!message.channel.guild) return message.reply('** This command only for servers**');
                
         if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("**انت لا تملك الصلاحيات المطلوبه**");
@@ -70,7 +70,7 @@ client.on('message', message => {
         
         let command = message.content.split(" ")[0];
         
-        if (command === ">mute") {
+        if (command === "mute") {
               if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** You Have no Permission 'Manage Roles' **").catch(console.error);
         let user = message.mentions.users.first();
         let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
@@ -107,7 +107,7 @@ client.on('message', message => {
         
         let command = message.content.split(" ")[0];
         
-        if (command === ">unmute") {
+        if (command === "unmute") {
               if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** You Do Not have 'Manage Roles' Permission **").catch(console.error);
         let user = message.mentions.users.first();
         let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
